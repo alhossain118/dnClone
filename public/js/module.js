@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('myApp', ['ui.router', 'ngCookies']);
+var app = angular.module('myApp', ['ui.router', 'ngCookies','ui.bootstrap']);
 
 app.constant('TOKENNAME', 'authtoken');
 
@@ -11,8 +11,12 @@ app.run(function(User) {
 app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('home', { url: '/', templateUrl: '/html/home.html' })
-    
+    .state('home', {
+      url: '/',
+      templateUrl: '/html/home.html',
+      controller: 'mainCtrl'
+   })
+
     .state('login', {
       url: '/login',
       templateUrl: '/html/loginregister.html',
